@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0b0b0b;
+  color: #ffffff;
+}
+
+/* ================= NAVBAR ================= */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+}
+
+.navbar {
+  padding: 18px 10%;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: #dcdcdc;
+  text-decoration: none;
+  font-size: 15px;
+  position: relative;
+  padding: 6px 2px;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #6c63ff, #4facfe);
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* ================= HOME ================= */
+.home {
+  min-height: 100vh;
+  padding-top: 100px;
+  background: #0b0b0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+}
+
+.home-content h2 {
+  font-size: 20px;
+  color: #ddd;
+}
+
+.home-content h1 {
+  font-size: 42px;
+  margin: 10px 0;
+}
+
+.home-content p {
+  color: #cfcfcf;
+  margin-bottom: 25px;
+}
+
+.home-img img {
+  width: 260px;
+  border-radius: 50%;
+  animation: fadeIn 1.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ================= SOCIAL ICONS ================= */
+.social-icons a {
+  font-size: 22px;
+  margin-right: 16px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px);
+}
+
+.linkedin { color: #0a66c2; }
+.github { color: #ffffff; }
+.x { color: #1da1f2; }
+.instagram { color: #e4405f; }
+
+/* ================= BUTTON ================= */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 28px;
+  border-radius: 25px;
+  border: 1px solid #6c63ff;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #6c63ff;
+}
+
+/* ================= SECTIONS ================= */
+section {
+  padding: 100px 12%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 30px;
+  margin-bottom: 35px;
+}
+
+/* ================= SKILLS ================= */
+.skill {
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.skill span {
+  font-size: 14px;
+}
+
+.progress {
+  background: #333;
+  height: 8px;
+  margin-top: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  background: linear-gradient(90deg, #6c63ff, #4facfe);
+}
+
+.html { width: 90%; }
+.css { width: 80%; }
+.python { width: 70%; }
+
+/* CERTIFICATES */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  margin-top: 40px;
+}
+
+.card {
+  background: #111;
+  border: 1px solid #1e293b;
+  border-radius: 18px;
+  padding: 25px 20px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  transition: 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(56, 189, 248, 0.15);
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 18px;
+  color: #38bdf8;
+}
+
+/* View Certificate Button */
+.view-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #000;
+  background: #38bdf8;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.view-btn:hover {
+  background: #0ea5e9;
+  color: #fff;
+}
+
+
+/* ================= CARDS ================= */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #111;
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid #222;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* ================= CONTACT ================= */
+form {
+  max-width: 420px;
+  margin: auto;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  padding: 25px;
+  background: #000;
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #6c63ff;
+  text-decoration: none;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .home-content h1 {
+    font-size: 34px;
+  }
+}
