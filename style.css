@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -14,24 +15,29 @@ body {
   color: #ffffff;
 }
 
-/* ================= NAVBAR ================= */
+
 header {
   position: fixed;
-  width: 100%;
   top: 0;
+  width: 100%;
   z-index: 1000;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
 }
 
 .navbar {
-  padding: 18px 10%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 
 .nav-links {
   list-style: none;
   display: flex;
-  justify-content: center;
   gap: 30px;
 }
 
@@ -40,7 +46,6 @@ header {
   text-decoration: none;
   font-size: 15px;
   position: relative;
-  padding: 6px 2px;
 }
 
 .nav-links li a::after {
@@ -58,15 +63,23 @@ header {
   width: 100%;
 }
 
-/* ================= HOME ================= */
+
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  color: white;
+}
+
+
 .home {
   min-height: 100vh;
-  padding-top: 100px;
-  background: #0b0b0b;
+  padding-top: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 70px;
+  gap: 60px;
+  flex-wrap: wrap;
 }
 
 .home-content h2 {
@@ -87,25 +100,12 @@ header {
 .home-img img {
   width: 260px;
   border-radius: 50%;
-  animation: fadeIn 1.8s ease;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
-/* ================= SOCIAL ICONS ================= */
 .social-icons a {
   font-size: 22px;
-  margin-right: 16px;
-  display: inline-block;
+  margin-right: 15px;
   transition: transform 0.3s ease;
 }
 
@@ -118,23 +118,7 @@ header {
 .x { color: #1da1f2; }
 .instagram { color: #e4405f; }
 
-/* ================= BUTTON ================= */
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 28px;
-  border-radius: 25px;
-  border: 1px solid #6c63ff;
-  color: #ffffff;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
 
-.btn:hover {
-  background: #6c63ff;
-}
-
-/* ================= SECTIONS ================= */
 section {
   padding: 100px 12%;
   text-align: center;
@@ -145,15 +129,11 @@ section {
   margin-bottom: 35px;
 }
 
-/* ================= SKILLS ================= */
+
 .skill {
   max-width: 400px;
   margin: 20px auto;
   text-align: left;
-}
-
-.skill span {
-  font-size: 14px;
 }
 
 .progress {
@@ -173,77 +153,26 @@ section {
 .css { width: 80%; }
 .python { width: 70%; }
 
-/* CERTIFICATES */
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
-  justify-items: center;
-  margin-top: 40px;
 }
 
 .card {
   background: #111;
-  border: 1px solid #1e293b;
-  border-radius: 18px;
-  padding: 25px 20px;
-  width: 100%;
-  max-width: 320px;
-  text-align: center;
-  transition: 0.35s ease;
+  border-radius: 16px;
+  padding: 25px;
+  border: 1px solid #222;
+  transition: 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 18px 40px rgba(56, 189, 248, 0.15);
-}
-
-.card h3 {
-  font-size: 1.15rem;
-  margin-bottom: 18px;
-  color: #38bdf8;
-}
-
-/* View Certificate Button */
-.view-btn {
-  display: inline-block;
-  padding: 8px 16px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #000;
-  background: #38bdf8;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.view-btn:hover {
-  background: #0ea5e9;
-  color: #fff;
 }
 
 
-/* ================= CARDS ================= */
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-}
-
-.card {
-  background: #111;
-  padding: 25px;
-  border-radius: 14px;
-  border: 1px solid #222;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-/* ================= CONTACT ================= */
 form {
   max-width: 420px;
   margin: auto;
@@ -256,33 +185,174 @@ form textarea {
   padding: 12px;
   border-radius: 8px;
   border: none;
-  outline: none;
 }
 
-/* ================= FOOTER ================= */
 footer {
   padding: 25px;
   background: #000;
   text-align: center;
   color: #888;
-  font-size: 14px;
 }
 
-.footer-links a {
-  margin: 0 10px;
-  color: #6c63ff;
-  text-decoration: none;
-}
 
-/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-  .home {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
+
+  .menu-toggle {
+    display: block;
   }
 
-  .home-content h1 {
-    font-size: 34px;
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: black;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 15px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .home {
+    text-align: center;
+  }
+
+  section {
+    padding: 80px 8%;
+  }
+}
+
+
+.certificate-btn {
+  display: inline-block;
+  margin-bottom: 40px;
+  padding: 12px 30px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: linear-gradient(135deg, #6c63ff, #4facfe);
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(108, 99, 255, 0.35);
+}
+
+.certificate-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(79, 172, 254, 0.45);
+}
+
+
+.view-btn {
+  display: inline-block;
+  padding: 9px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #38bdf8;
+  border: 1px solid #38bdf8;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.view-btn:hover {
+  background: #38bdf8;
+  color: #000;
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+  transform: translateY(-2px);
+}
+
+
+.contact {
+  padding: 100px 12%;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.9)
+  );
+}
+
+.contact .section-title {
+  font-size: 30px;
+  margin-bottom: 35px;
+  color: #e5e7eb;
+}
+
+
+.contact form {
+  max-width: 500px;
+  margin: auto;
+  background: rgba(17, 17, 17, 0.8);
+  padding: 35px 30px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  background: #0b0b0b;
+  border: 1px solid #1e293b;
+  color: #ffffff;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: none;
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.25);
+}
+
+
+.contact textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+
+.contact .btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #6c63ff, #4facfe);
+  transition: all 0.35s ease;
+  box-shadow: 0 10px 25px rgba(108, 99, 255, 0.4);
+}
+
+
+.contact .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(79, 172, 254, 0.5);
+}
+
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 80px 8%;
+  }
+
+  .contact form {
+    padding: 30px 22px;
   }
 }
